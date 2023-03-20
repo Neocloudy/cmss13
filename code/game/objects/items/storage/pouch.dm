@@ -460,6 +460,10 @@
 	storage_slots = 6
 	icon_state = "large_pistol_mag"
 
+/obj/item/storage/pouch/magazine/large/corpsman/fill_preset_inventory()
+	for(var/i in 1 to storage_slots)
+		new /obj/item/ammo_magazine/smg/m39/extended(src)
+
 /obj/item/storage/pouch/magazine/pistol/large/mateba/fill_preset_inventory()
 	for(var/i in 1 to storage_slots)
 		new /obj/item/ammo_magazine/revolver/mateba(src)
@@ -665,6 +669,12 @@
 		/obj/item/tool/surgery/surgical_line,
 		/obj/item/tool/surgery/synthgraft,
 	)
+
+/obj/item/storage/pouch/medical/full/corpsman/fill_preset_inventory()
+	new /obj/item/tool/surgery/surgical_line(src)
+	new /obj/item/tool/surgery/synthgraft(src)
+	new /obj/item/reagent_container/hypospray/autoinjector/adrenaline(src)
+	new /obj/item/reagent_container/hypospray/autoinjector/adrenaline(src)
 
 /obj/item/storage/pouch/medical/full/fill_preset_inventory()
 	new /obj/item/device/healthanalyzer(src)

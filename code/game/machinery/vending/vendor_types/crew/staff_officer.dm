@@ -79,3 +79,24 @@ GLOBAL_LIST_INIT(cm_vending_clothing_staff_officer, list(
 		list("Whistle", 5, /obj/item/device/whistle, null, VENDOR_ITEM_REGULAR),
 		list("Machete Scabbard (Full)", 2, /obj/item/storage/large_holster/machete/full, null, VENDOR_ITEM_REGULAR)
 	))
+
+// Deployment Rack!
+// 	Gives SO a way to grab loadouts without looting every department. This works using kits. Dpesn't vend anything else. To be placed in the armory.
+/obj/structure/machinery/cm_vending/clothing/staff_officer/deployment
+	name = "\improper ColMarTech Staff Officer Field Deployment Rack"
+	desc = "An automated equipment vendor for Staff Officers to grab loadouts when they are deploying."
+	req_access = list(ACCESS_MARINE_COMMAND)
+	vendor_role = list(JOB_SO)
+
+/obj/structure/machinery/cm_vending/clothing/staff_officer/deployment/get_listed_products(mob/user)
+	return GLOB.cm_vending_clothing_staff_officer_deployment
+
+//------------GEAR---------------
+
+GLOBAL_LIST_INIT(cm_vending_clothing_staff_officer_deployment, list(
+		list("LOADOUT (CHOOSE 1)", 0, null, null, null),
+		list("Command Corpsman", 0, /obj/item/storage/box/kit/command/corpsman, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_RECOMMENDED),
+		list("Command Engineer (M39)", 0, /obj/item/storage/box/kit/command/engineer, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_REGULAR),
+		list("Command Engineer (M41A)", 0, /obj/item/storage/box/kit/command/engineer/m41a, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_REGULAR),
+	))
+

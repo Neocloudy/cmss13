@@ -399,6 +399,15 @@
 	xeno_icon_state = "marinepack"
 	xeno_types = list(/mob/living/carbon/xenomorph/runner, /mob/living/carbon/xenomorph/praetorian, /mob/living/carbon/xenomorph/drone, /mob/living/carbon/xenomorph/warrior, /mob/living/carbon/xenomorph/defender, /mob/living/carbon/xenomorph/sentinel, /mob/living/carbon/xenomorph/spitter)
 
+/obj/item/storage/backpack/marine/loaded/fill_preset_inventory()
+	new /obj/item/storage/firstaid/adv(src)
+	new /obj/item/storage/firstaid/adv(src)
+	new /obj/item/storage/firstaid/adv(src)
+	new /obj/item/device/defibrillator(src)
+	new /obj/item/device/defibrillator(src)
+	new /obj/item/device/defibrillator(src)
+	new /obj/item/device/binoculars/range/designator(src)
+
 /obj/item/storage/backpack/marine/medic
 	name = "\improper USCM corpsman backpack"
 	desc = "A standard-issue backpack worn by USCM medics."
@@ -884,6 +893,15 @@ GLOBAL_LIST_EMPTY_TYPED(radio_packs, /obj/item/storage/backpack/marine/satchel/r
 /obj/item/storage/backpack/marine/engineerpack/get_examine_text(mob/user)
 	. = ..()
 	. += "[reagents.total_volume] units of fuel left!"
+
+/obj/item/storage/backpack/marine/engineerpack/command/fill_preset_inventory()
+	new /obj/item/stack/sheet/metal/large_stack(src)
+	new /obj/item/stack/sheet/metal/large_stack(src)
+	new /obj/item/stack/sheet/plasteel/large_stack(src)
+	new /obj/item/stack/sheet/plasteel/large_stack(src)
+	new /obj/item/stack/cable_coil(src,30,pick("red","yellow","orange"))
+	new /obj/item/device/binoculars/range/designator(src)
+
 
 /obj/item/storage/backpack/marine/engineerpack/satchel
 	name = "\improper USCM technician welder-satchel"

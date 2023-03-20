@@ -59221,9 +59221,7 @@
 	},
 /area/almayer/lifeboat_pumps/south1)
 "ryR" = (
-/obj/structure/machinery/cm_vending/sorted/uniform_supply/squad_prep{
-	req_access = list(1)
-	},
+/obj/structure/machinery/cm_vending/clothing/staff_officer/deployment,
 /turf/open/floor/almayer{
 	icon_state = "redfull"
 	},

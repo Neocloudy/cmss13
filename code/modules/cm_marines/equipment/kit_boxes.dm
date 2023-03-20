@@ -529,3 +529,113 @@
 	new /obj/item/storage/pouch/construction/low_grade_full(src)
 	new /obj/item/storage/pouch/electronics/full(src)
 	new /obj/item/clothing/glasses/welding(src)
+
+//******************************************Staff Officer Deployment Kits****************************************************************/
+
+/obj/item/storage/box/kit/command
+	icon = 'icons/obj/items/storage.dmi'
+	icon_state = "kit_case"
+	var/kit_overlay = null
+	w_class = SIZE_HUGE
+	storage_slots = 14
+	slowdown = 1
+	can_hold = list() //Nada. Once you take the stuff out it doesn't fit back in.
+	foldable = null
+
+/obj/item/storage/box/kit/command/update_icon()
+	if(LAZYLEN(overlays))
+		overlays.Cut()
+	if(LAZYLEN(contents))
+		icon_state = "kit_case"
+		overlays += image(icon, kit_overlay)
+	else
+		icon_state = "kit_case_e"
+/obj/item/storage/box/kit/command/corpsman
+	name = "\improper Corpsman equipment case (M39)"
+	desc = "A large case containing an advanced corpsman loadout for Staff Officers to use during deployment.\n\nContains a corpsman loadout with 3 advanced first aid kits, 3 defibrillators, a full lifesaver belt, a M39 SMG and plenty of ammunition to carry on your armor and webbing.\nTo take the webbing out of it, drop it on the floor. Drag this sprite onto yourself to open it up! NOTE: You cannot put items back inside this case."
+
+/obj/item/storage/box/kit/command/corpsman/fill_preset_inventory()
+	new /obj/item/storage/belt/medical/lifesaver/full/command(src)
+	new /obj/item/clothing/glasses/hud/health(src)
+	new /obj/item/clothing/head/helmet/marine/medic(src)
+	new /obj/item/storage/backpack/marine/medic/loaded(src)
+	new /obj/item/clothing/shoes/marine/knife(src)
+	new /obj/item/clothing/suit/storage/marine/light(src)
+	new /obj/item/storage/pouch/medical/full/corpsman(src)
+	new /obj/item/storage/pouch/magazine/large/corpsman(src)
+	new /obj/item/clothing/accessory/storage/webbing(src)
+	new /obj/item/weapon/gun/smg/m39(src)
+	new /obj/item/attachable/magnetic_harness(src)
+	new /obj/item/attachable/lasersight(src)
+	new /obj/item/ammo_magazine/smg/m39/extended(src)
+	new /obj/item/ammo_magazine/smg/m39/extended(src)
+	new /obj/item/ammo_magazine/smg/m39/extended(src)
+	new /obj/item/ammo_magazine/smg/m39/extended(src)
+	new /obj/item/ammo_magazine/smg/m39/extended(src)
+
+/obj/item/storage/box/kit/command/corpsman/m41a
+	name = "\improper Corpsman equipment case (M41A)"
+	desc = "A large case containing an advanced corpsman loadout for Staff Officers to use during deployment.\n\nContains a corpsman loadout with 3 advanced first aid kits, 3 defibrillators, a full lifesaver belt, a M39 SMG and plenty of ammunition to carry on your armor and webbing.\nTo take the webbing out of it, drop it on the floor. Drag this sprite onto yourself to open it up! NOTE: You cannot put items back inside this case."
+
+/obj/item/storage/box/kit/command/corpsman/m41a/fill_preset_inventory()
+	new /obj/item/storage/belt/medical/lifesaver/full/command(src)
+	new /obj/item/clothing/glasses/hud/health(src)
+	new /obj/item/clothing/head/helmet/marine(src)
+	new /obj/item/storage/backpack/marine/loaded(src)
+	new /obj/item/clothing/shoes/marine/knife(src)
+	new /obj/item/clothing/suit/storage/marine/light(src)
+	new /obj/item/storage/pouch/medical/full/corpsman(src)
+	new /obj/item/storage/pouch/magazine/large/corpsman(src)
+	new /obj/item/clothing/accessory/storage/webbing(src)
+	new /obj/item/weapon/gun/rifle/m41a(src)
+	new /obj/item/attachable/magnetic_harness(src)
+	new /obj/item/ammo_magazine/rifle/extended(src)
+	new /obj/item/ammo_magazine/rifle/extended(src)
+	new /obj/item/ammo_magazine/rifle/extended(src)
+	new /obj/item/ammo_magazine/rifle/extended(src)
+	new /obj/item/ammo_magazine/rifle/extended(src)
+
+/obj/item/storage/box/kit/command/engineer
+	name = "\improper Engineer equipment case (M39)"
+	desc = "A large case containing an advanced engineer loadout for Staff Officers to use during deployment.\n\nContains an engineer loadout with a backpack that holds materials with plenty of remaining capacity, a tool belt, construction pouch, a M39 SMG and plenty of ammunition to carry on your armor and webbing.\nTo take the webbing out of it, drop it on the floor. Drag this sprite onto yourself to open it up! NOTE: You cannot put items back inside this case."
+
+/obj/item/storage/box/kit/command/engineer/fill_preset_inventory()
+	new /obj/item/storage/belt/utility/full(src)
+	new /obj/item/clothing/glasses/hud/health(src)
+	new /obj/item/clothing/head/helmet/marine/tech(src)
+	new /obj/item/storage/backpack/marine/engineerpack/command(src)
+	new /obj/item/clothing/shoes/marine/knife(src)
+	new /obj/item/clothing/suit/storage/marine/light(src)
+	new /obj/item/storage/pouch/construction/full(src)
+	new /obj/item/storage/pouch/magazine/large/corpsman(src)
+	new /obj/item/clothing/accessory/storage/webbing(src)
+	new /obj/item/weapon/gun/smg/m39(src)
+	new /obj/item/attachable/magnetic_harness(src)
+	new /obj/item/attachable/lasersight(src)
+	new /obj/item/ammo_magazine/smg/m39/extended(src)
+	new /obj/item/ammo_magazine/smg/m39/extended(src)
+	new /obj/item/ammo_magazine/smg/m39/extended(src)
+	new /obj/item/ammo_magazine/smg/m39/extended(src)
+	new /obj/item/ammo_magazine/smg/m39/extended(src)
+
+/obj/item/storage/box/kit/command/engineer/m41a
+	name = "\improper Engineer equipment case (M41A)"
+	desc = "A large case containing a rifleman loadout for Staff Officers to use during deployment.\n\nContains a rifleman loadout with a laser designator, flare pack, M41A MK2 and plenty of ammunition to carry on your armor and webbing.\nTo take the webbing out of it, drop it on the floor. Drag this sprite onto yourself to open it up! NOTE: You cannot put items back inside this case."
+
+/obj/item/storage/box/kit/command/engineer/m41a/fill_preset_inventory()
+	new /obj/item/storage/belt/utility/full(src)
+	new /obj/item/clothing/glasses/hud/health(src)
+	new /obj/item/clothing/head/helmet/marine/tech(src)
+	new /obj/item/storage/backpack/marine/engineerpack/command(src)
+	new /obj/item/clothing/shoes/marine/knife(src)
+	new /obj/item/clothing/suit/storage/marine/light(src)
+	new /obj/item/storage/pouch/construction/full(src)
+	new /obj/item/storage/pouch/magazine/large/corpsman(src)
+	new /obj/item/clothing/accessory/storage/webbing(src)
+	new /obj/item/weapon/gun/rifle/m41a(src)
+	new /obj/item/attachable/magnetic_harness(src)
+	new /obj/item/ammo_magazine/rifle/extended(src)
+	new /obj/item/ammo_magazine/rifle/extended(src)
+	new /obj/item/ammo_magazine/rifle/extended(src)
+	new /obj/item/ammo_magazine/rifle/extended(src)
+	new /obj/item/ammo_magazine/rifle/extended(src)
