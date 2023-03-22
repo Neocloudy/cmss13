@@ -464,6 +464,10 @@
 	for(var/i in 1 to storage_slots)
 		new /obj/item/ammo_magazine/smg/m39/extended(src)
 
+/obj/item/storage/pouch/magazine/large/corpsman/rifle/fill_preset_inventory()
+	for(var/i in 1 to storage_slots)
+		new /obj/item/ammo_magazine/rifle/extended(src)
+
 /obj/item/storage/pouch/magazine/pistol/large/mateba/fill_preset_inventory()
 	for(var/i in 1 to storage_slots)
 		new /obj/item/ammo_magazine/revolver/mateba(src)

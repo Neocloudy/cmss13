@@ -510,6 +510,11 @@ var/list/squad_colors_chat = list(rgb(230,125,125), rgb(255,230,80), rgb(255,150
 	armor_internaldamage = CLOTHING_ARMOR_LOW
 	storage_slots = 2
 
+/obj/item/clothing/suit/storage/marine/light/SO
+	name = "\improper M3-L pattern light officer armor"
+	desc = "A lighter, cut down version of the standard M3 pattern armor with some USCM officer markings on it. It sacrifices durability for more speed. Useful for letting your men know who is in charge when taking to the field."
+	specialty = "\improper M3-L pattern light officer"
+
 /obj/item/clothing/suit/storage/marine/light/vest
 	name = "\improper M3-VL pattern ballistics vest"
 	desc = "Up until 2182 USCM non-combat personnel were issued non-standardized ballistics vests, though the lack of IMP compatibility and suit lamps proved time and time again inefficient. This modified M3-L shell is the result of a 6-year R&D program; It provides utility, protection, AND comfort to all USCM non-combat personnel."
