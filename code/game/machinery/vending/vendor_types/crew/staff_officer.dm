@@ -83,7 +83,7 @@ GLOBAL_LIST_INIT(cm_vending_clothing_staff_officer, list(
 // Deployment Rack!
 // 	It is a way to grab loadouts without looting every department. This works using kits. Dpesn't vend anything else. To be placed in the armory.
 /obj/structure/machinery/cm_vending/clothing/staff_officer/deployment
-	name = "\improper ColMarTech Armory Rack"
+	name = "\improper ColMarTech Advanced Armory Rack"
 	desc = "An automated armory vendor for Command staff to use. This one has no loadout restrictions."
 	req_access = list(ACCESS_MARINE_COMMAND)
 	vendor_role = list(JOB_COMMAND_ROLES)
@@ -104,24 +104,7 @@ GLOBAL_LIST_INIT(cm_vending_clothing_staff_officer_deployment, list(
 	))
 
 /obj/structure/machinery/cm_vending/clothing/staff_officer/deployment/strict
-	name = "\improper ColMarTech Armory Rack"
-	desc = "An automated armory vendor for Command staff to use. This one is restricted to only standard loadouts."
-	req_access = list(ACCESS_MARINE_COMMAND)
-	vendor_role = list(JOB_COMMAND_ROLES)
-
-/obj/structure/machinery/cm_vending/clothing/staff_officer/deployment/strict/get_listed_products(mob/user)
-	return GLOB.cm_vending_clothing_staff_officer_strict
-
-//------------GEAR---------------
-
-GLOBAL_LIST_INIT(cm_vending_clothing_staff_officer_strict, list(
-		list("LOADOUT (CHOOSE 1)", 0, null, null, null),
-		list("Command Standard (M41A)", 0, /obj/item/storage/box/kit/command/rifleman/strict, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_RECOMMENDED),
-		list("Command Standard (M39)", 0, /obj/item/storage/box/kit/command/rifleman/strict, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_REGULAR),
-	))
-
-/obj/structure/machinery/cm_vending/clothing/staff_officer/deployment/strict
-	name = "\improper ColMarTech Armory Rack"
+	name = "\improper ColMarTech Standard Armory Rack"
 	desc = "An automated armory vendor for Command staff to use. This one is restricted to only standard loadouts."
 	req_access = list(ACCESS_MARINE_COMMAND)
 	vendor_role = list(JOB_COMMAND_ROLES)
