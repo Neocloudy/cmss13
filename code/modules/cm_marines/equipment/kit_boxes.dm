@@ -558,7 +558,7 @@
 	new /obj/item/storage/belt/medical/lifesaver/full/command(src)
 	new /obj/item/clothing/glasses/hud/health(src)
 	new /obj/item/clothing/head/helmet/marine/medic(src)
-	new /obj/item/storage/backpack/marine/medic/loaded(src)
+	new /obj/item/storage/backpack/marine/loaded(src)
 	new /obj/item/clothing/shoes/marine/knife(src)
 	new /obj/item/clothing/suit/storage/marine/light/SO(src)
 	new /obj/item/storage/pouch/medical/full/corpsman(src)

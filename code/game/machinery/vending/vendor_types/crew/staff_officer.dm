@@ -86,7 +86,7 @@ GLOBAL_LIST_INIT(cm_vending_clothing_staff_officer, list(
 	name = "\improper ColMarTech Advanced Armory Rack"
 	desc = "An automated armory vendor for Command staff to use. This one has no loadout restrictions."
 	req_access = list(ACCESS_MARINE_COMMAND)
-	vendor_role = list(JOB_COMMAND_ROLES)
+	vendor_role = list(JOB_SO, JOB_XO)
 
 /obj/structure/machinery/cm_vending/clothing/staff_officer/deployment/get_listed_products(mob/user)
 	return GLOB.cm_vending_clothing_staff_officer_deployment
@@ -98,7 +98,7 @@ GLOBAL_LIST_INIT(cm_vending_clothing_staff_officer_deployment, list(
 		list("Command Standard (M41A)", 0, /obj/item/storage/box/kit/command/rifleman/m41a, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_RECOMMENDED),
 		list("Command Standard (M39)", 0, /obj/item/storage/box/kit/command/rifleman, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_REGULAR),
 		list("Command Corpsman (M39)", 0, /obj/item/storage/box/kit/command/corpsman, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_REGULAR),
-		list("Command Corpsman (M41A)", 0, /obj/item/storage/box/kit/command/corpsman, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_REGULAR),
+		list("Command Corpsman (M41A)", 0, /obj/item/storage/box/kit/command/corpsman/m41a, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_REGULAR),
 		list("Command Engineer (M39)", 0, /obj/item/storage/box/kit/command/engineer, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_REGULAR),
 		list("Command Engineer (M41A)", 0, /obj/item/storage/box/kit/command/engineer/m41a, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_REGULAR),
 	))
@@ -107,7 +107,7 @@ GLOBAL_LIST_INIT(cm_vending_clothing_staff_officer_deployment, list(
 	name = "\improper ColMarTech Standard Armory Rack"
 	desc = "An automated armory vendor for Command staff to use. This one is restricted to only standard loadouts."
 	req_access = list(ACCESS_MARINE_COMMAND)
-	vendor_role = list(JOB_COMMAND_ROLES)
+	vendor_role = list(JOB_SO, JOB_XO)
 
 /obj/structure/machinery/cm_vending/clothing/staff_officer/deployment/strict/get_listed_products(mob/user)
 	return GLOB.cm_vending_clothing_staff_officer_strict
