@@ -50,7 +50,7 @@ GLOBAL_LIST_INIT(cm_vending_clothing_staff_officer, list(
 		list("Large Magazine Pouch", 0, /obj/item/storage/pouch/magazine/large, (MARINE_CAN_BUY_R_POUCH|MARINE_CAN_BUY_L_POUCH), VENDOR_ITEM_REGULAR),
 		list("Large Shotgun Shell Pouch", 0, /obj/item/storage/pouch/shotgun/large, (MARINE_CAN_BUY_R_POUCH|MARINE_CAN_BUY_L_POUCH), VENDOR_ITEM_REGULAR),
 		list("Large Pistol Magazine Pouch", 0, /obj/item/storage/pouch/magazine/pistol/large, (MARINE_CAN_BUY_R_POUCH|MARINE_CAN_BUY_L_POUCH), VENDOR_ITEM_REGULAR),
-		list("Medical Pouch", 0, /obj/item/storage/pouch/medical, (MARINE_CAN_BUY_R_POUCH|MARINE_CAN_BUY_L_POUCH), VENDOR_ITEM_REGULAR),
+		list("Medical Pouch (Full)", 0, /obj/item/storage/pouch/medical/full/corpsman, (MARINE_CAN_BUY_R_POUCH|MARINE_CAN_BUY_L_POUCH), VENDOR_ITEM_REGULAR),
 		list("Medkit Pouch", 0, /obj/item/storage/pouch/medkit, (MARINE_CAN_BUY_R_POUCH|MARINE_CAN_BUY_L_POUCH), VENDOR_ITEM_REGULAR),
 		list("Pistol Pouch", 0, /obj/item/storage/pouch/pistol, (MARINE_CAN_BUY_R_POUCH|MARINE_CAN_BUY_L_POUCH), VENDOR_ITEM_REGULAR),
 		list("Sling Pouch", 0, /obj/item/storage/pouch/sling, (MARINE_CAN_BUY_R_POUCH|MARINE_CAN_BUY_L_POUCH), VENDOR_ITEM_REGULAR),
@@ -78,45 +78,5 @@ GLOBAL_LIST_INIT(cm_vending_clothing_staff_officer, list(
 		list("Space Cleaner", 2, /obj/item/reagent_container/spray/cleaner, null, VENDOR_ITEM_REGULAR),
 		list("Whistle", 5, /obj/item/device/whistle, null, VENDOR_ITEM_REGULAR),
 		list("Machete Scabbard (Full)", 2, /obj/item/storage/large_holster/machete/full, null, VENDOR_ITEM_REGULAR)
-	))
-
-// Deployment Rack!
-// 	It is a way to grab loadouts without looting every department. This works using kits. Dpesn't vend anything else. To be placed in the armory.
-/obj/structure/machinery/cm_vending/clothing/staff_officer/deployment
-	name = "\improper ColMarTech Advanced Armory Rack"
-	desc = "An automated armory vendor for Command staff to use. This one has no loadout restrictions."
-	req_access = list(ACCESS_MARINE_COMMAND)
-	vendor_role = list(JOB_SO, JOB_XO)
-
-/obj/structure/machinery/cm_vending/clothing/staff_officer/deployment/get_listed_products(mob/user)
-	return GLOB.cm_vending_clothing_staff_officer_deployment
-
-//------------GEAR---------------
-
-GLOBAL_LIST_INIT(cm_vending_clothing_staff_officer_deployment, list(
-		list("LOADOUT (CHOOSE 1)", 0, null, null, null),
-		list("Command Standard (M41A)", 0, /obj/item/storage/box/kit/command/rifleman/m41a, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_RECOMMENDED),
-		list("Command Standard (M39)", 0, /obj/item/storage/box/kit/command/rifleman, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_REGULAR),
-		list("Command Corpsman (M39)", 0, /obj/item/storage/box/kit/command/corpsman, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_REGULAR),
-		list("Command Corpsman (M41A)", 0, /obj/item/storage/box/kit/command/corpsman/m41a, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_REGULAR),
-		list("Command Engineer (M39)", 0, /obj/item/storage/box/kit/command/engineer, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_REGULAR),
-		list("Command Engineer (M41A)", 0, /obj/item/storage/box/kit/command/engineer/m41a, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_REGULAR),
-	))
-
-/obj/structure/machinery/cm_vending/clothing/staff_officer/deployment/strict
-	name = "\improper ColMarTech Standard Armory Rack"
-	desc = "An automated armory vendor for Command staff to use. This one is restricted to only standard loadouts."
-	req_access = list(ACCESS_MARINE_COMMAND)
-	vendor_role = list(JOB_SO, JOB_XO)
-
-/obj/structure/machinery/cm_vending/clothing/staff_officer/deployment/strict/get_listed_products(mob/user)
-	return GLOB.cm_vending_clothing_staff_officer_strict
-
-//------------GEAR---------------
-
-GLOBAL_LIST_INIT(cm_vending_clothing_staff_officer_strict, list(
-		list("LOADOUT (CHOOSE 1)", 0, null, null, null),
-		list("Command Standard (M41A)", 0, /obj/item/storage/box/kit/command/rifleman/m41a/strict, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_RECOMMENDED),
-		list("Command Standard (M39)", 0, /obj/item/storage/box/kit/command/rifleman/strict, MARINE_CAN_BUY_ESSENTIALS, VENDOR_ITEM_REGULAR),
 	))
 
